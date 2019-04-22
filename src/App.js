@@ -1,8 +1,6 @@
 import React from "react";
-import HelloReact from "./components/HelloReact";
+import PagesContainer from "./components/PagesContainer";
 
-function App() {
-  return <HelloReact />;
-}
+const App = () => <PagesContainer />;
 
 export default App;
