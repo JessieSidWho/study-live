@@ -26,6 +26,8 @@ class App extends Component {
             const p = document.createElement("p");
             p.append(msg);
             document.getElementById("chat").append(p);
+
+            this.scrollChatIfAtBottom();
         });
     }
 
@@ -35,19 +37,19 @@ class App extends Component {
         socket.emit('chat message', this.state.message);
 
         this.setState({ message: "" });
+
+        this.scrollChatIfAtBottom();
     }
 
     handleMessageChange(event) {
         this.setState({message: event.target.value});
     }
 
-    componentDidMount() {
+    scrollChatIfAtBottom() {
         const chat = document.getElementById("chat");
 
-        setInterval(function() {
-            let isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 100;
-            if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
-        }, 250);
+        let isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 50;
+        if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
     }
 
     render() { 
