@@ -46,8 +46,10 @@ class App extends Component {
                     <div className="col-md-8">
                         <PagesContainer />
                     </div>
-                    <div id="chat" className="col-md-4 border border-dark">
-                        Study Live: Hello
+                    <div className="col-md-4 border border-dark">
+                        <div id="chat" readonly>
+                            Study Live: Hello
+                        </div>
                     </div>
                 </div>
 
