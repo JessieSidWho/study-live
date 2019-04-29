@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PagesContainer from "./components/PagesContainer";
 import { socket } from './sockets/client';
 import "./App.css";
