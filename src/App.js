@@ -1,16 +1,24 @@
 import React from "react";
+import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
+import './index.css';
 
 const App = () => {
     return (
-    <div className="row">
-        <div className="col-md-8">
-            <PagesContainer />
-         </div>
-        <div className="col-md-4 border border-dark">
-            Hello
-        </div>
-    </div>
+        <>
+          <Navbar />
+            <div className="row">
+                <div id="col" className="col-md-8">
+                    <PagesContainer />
+                </div>
+                <div className="col-md-4 border border-top-0 border-dark">
+                    Hello
+                </div>
+            </div>
+            <div className="bg-dark"> 
+              {/* div for comments */}
+            </div>
+        </>
     )
 }
 
