@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import NavTabs from "./NavTabs";
-import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
+import Lofi from "./pages/Lofi";
+import Tropical from "./pages/Tropical";
+import Classical from "./pages/Classical";
 
 class Pages extends Component {
   state = {
-    currentPage: "Home"
+    currentPage: "Lofi"
   };
 
   handlePageChange = page => {
@@ -14,12 +14,12 @@ class Pages extends Component {
   };
 
   renderPage = () => {
-    if (this.state.currentPage === "Home") {
-      return <Home />;
-    } else if (this.state.currentPage === "Portfolio") {
-      return <Portfolio />;
-    } else {
-      return <Contact />;
+    if (this.state.currentPage === "Lofi") {
+      return <Lofi />;
+    } else if (this.state.currentPage === "Tropical") {
+      return <Tropical />;
+    } else if (this.state.currentPage === "Classical") {
+      return <Classical />;
     }
   };
 

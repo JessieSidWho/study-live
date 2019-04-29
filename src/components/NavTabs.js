@@ -11,27 +11,27 @@ function NavTabs(props) {
         </li>
         <li className="nav-item col-md-2 offset-1">
           <a
-            href="#home"
-            onClick={() => props.handlePageChange("Home")}
-            className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}
+            href="#lofi"
+            onClick={() => props.handlePageChange("Lofi")}
+            className={props.currentPage === "Lofi" ? "nav-link active" : "nav-link"}
           >
-            Lofi Hip-Hop
+            Lofi
         </a>
         </li>
         <li className="nav-item col-md-2">
           <a
-            href="#porfolio"
-            onClick={() => props.handlePageChange("Portfolio")}
-            className={props.currentPage === "Portfolio" ? "nav-link active" : "nav-link"}
+            href="#tropical"
+            onClick={() => props.handlePageChange("Tropical")}
+            className={props.currentPage === "Tropical" ? "nav-link active" : "nav-link"}
           >
-            Tropical Summer
+            Tropical
         </a>
         </li>
         <li className="nav-item col-md-2">
           <a
-            href="#contact"
-            onClick={() => props.handlePageChange("Contact")}
-            className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}
+            href="#classical"
+            onClick={() => props.handlePageChange("Classical")}
+            className={props.currentPage === "Classical" ? "nav-link active" : "nav-link"}
           >
             Classical
         </a>
