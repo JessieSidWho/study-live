@@ -6,7 +6,7 @@ import "./App.css";
 class App extends Component {
     
     state = {
-        timestamp: "no timestamp yet",
+        // timestamp: "no timestamp yet",
         message: ""
     }
 
