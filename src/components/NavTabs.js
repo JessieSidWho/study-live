@@ -6,7 +6,7 @@ function NavTabs(props) {
       <ul className="nav nav-tabs row">
         <li className="nav-item col-md-2 pt-2 ml-2">
           
-            Jessie Sidhu
+            Study-With-Me
         
         </li>
         <li className="nav-item col-md-2 offset-1">
@@ -15,7 +15,7 @@ function NavTabs(props) {
             onClick={() => props.handlePageChange("Home")}
             className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}
           >
-            Home
+            Lofi Hip-Hop
         </a>
         </li>
         <li className="nav-item col-md-2">
@@ -24,7 +24,7 @@ function NavTabs(props) {
             onClick={() => props.handlePageChange("Portfolio")}
             className={props.currentPage === "Portfolio" ? "nav-link active" : "nav-link"}
           >
-            Portfolio
+            Tropical Summer
         </a>
         </li>
         <li className="nav-item col-md-2">
@@ -33,7 +33,7 @@ function NavTabs(props) {
             onClick={() => props.handlePageChange("Contact")}
             className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}
           >
-            Contact
+            Classical
         </a>
         </li>
       </ul>
