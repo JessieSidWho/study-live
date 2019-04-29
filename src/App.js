@@ -1,25 +1,108 @@
-import React from "react";
+import React, { Component } from "react";
 import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
+import { socket } from './sockets/client';
 import './index.css';
+import "./App.css";
 
-const App = () => {
-    return (
-        <>
-          <Navbar />
-            <div className="row">
-                <div id="col" className="col-md-8">
-                    <PagesContainer />
+class App extends Component {
+    
+    state = {
+        // timestamp: "no timestamp yet",
+        message: ""
+    }
+
+    constructor(props) {
+        super(props);
+
+        this.handleMessageChange = this.handleMessageChange.bind(this);
+        this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
+
+        // subscribeToTimer((error, timestamp) => this.setState({
+        //     timestamp
+        // }));
+
+        socket.on('chat message', msg => {
+            const p = document.createElement("p");
+            p.append(msg);
+            document.getElementById("chat").append(p);
+
+            this.scrollChatIfAtBottom();
+        });
+    }
+
+    handleMessageSubmit(event) {
+        event.preventDefault();
+        console.log(`message: ${this.state.message}`);
+        socket.emit('chat message', this.state.message);
+
+
+        this.setState({ message: "" });
+
+        this.scrollChatIfAtBottom();
+    }
+
+    handleMessageChange(event) {
+        this.setState({message: event.target.value});
+    }
+
+    scrollChatIfAtBottom() {
+        const chat = document.getElementById("chat");
+
+        let isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 50;
+        if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+    }
+
+    render() { 
+        return (
+            <>
+                <Navbar />
+                <div className="row">
+                    <div className="col-md-8">
+                        <PagesContainer />
+                    </div>
+                    <div className="col-md-4 border border-dark">
+                        <div id="chat" >
+                            <p>
+                                Study Live: Hello
+                            </p>
+                        </div>
+
+                        <div className="row border border-dark">
+                            <form onSubmit={this.handleMessageSubmit}>
+                                <label>send message</label>
+                                <input
+                                    type="text"
+                                    value={ this.state.message }
+                                    onChange = { this.handleMessageChange }
+                                    name="message" />
+                                <input
+                                    type="submit"
+                                    value="Submit" />
+                            </form>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div className="col-md-4 border border-top-0 border-dark">
-                    Hello
-                </div>
-            </div>
-            <div className="bg-dark"> 
-              {/* div for comments */}
-            </div>
-        </>
-    )
+
+                {/* <div className="row">
+                    <div className="col-md-4 offset-md-8 border border-dark">
+                        <form onSubmit={this.handleMessageSubmit}>
+                            <label>send message</label>
+                            <input
+                                type="text"
+                                value={ this.state.message }
+                                onChange = { this.handleMessageChange }
+                                name="message" />
+                            <input
+                                type="submit"
+                                value="Submit" />
+                        </form>
+                    </div>
+                </div> */}
+            </>
+        )
+    }
 }
-
+ 
 export default App;
