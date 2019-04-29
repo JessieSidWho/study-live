@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
 import { socket } from './sockets/client';
+import './index.css';
 import "./App.css";
 
 class App extends Component {
@@ -34,6 +36,7 @@ class App extends Component {
         console.log(`message: ${this.state.message}`);
         socket.emit('chat message', this.state.message);
 
+
         this.setState({ message: "" });
 
         this.scrollChatIfAtBottom();
@@ -52,21 +55,37 @@ class App extends Component {
 
     render() { 
         return (
-            <div>
+            <>
+                <Navbar />
                 <div className="row">
                     <div className="col-md-8">
                         <PagesContainer />
                     </div>
                     <div className="col-md-4 border border-dark">
-                        <div id="chat">
-                        <p>
-                            Study Live: Hello
-                        </p>
+                        <div id="chat" >
+                            <p>
+                                Study Live: Hello
+                            </p>
+                        </div>
+
+                        <div className="row border border-dark">
+                            <form onSubmit={this.handleMessageSubmit}>
+                                <label>send message</label>
+                                <input
+                                    type="text"
+                                    value={ this.state.message }
+                                    onChange = { this.handleMessageChange }
+                                    name="message" />
+                                <input
+                                    type="submit"
+                                    value="Submit" />
+                            </form>
                         </div>
                     </div>
+                    
                 </div>
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-md-4 offset-md-8 border border-dark">
                         <form onSubmit={this.handleMessageSubmit}>
                             <label>send message</label>
@@ -80,8 +99,8 @@ class App extends Component {
                                 value="Submit" />
                         </form>
                     </div>
-                </div>
-            </div>
+                </div> */}
+            </>
         )
     }
 }
