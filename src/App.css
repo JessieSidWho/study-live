@@ -3,7 +3,7 @@ form label {
 }
 
 #chat {
-    height: 600px;
+    height: 500px;
     width: 100%;
 
     overflow-y: auto;

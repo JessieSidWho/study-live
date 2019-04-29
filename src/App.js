@@ -33,10 +33,21 @@ class App extends Component {
         event.preventDefault();
         console.log(`message: ${this.state.message}`);
         socket.emit('chat message', this.state.message);
+
+        this.setState({ message: "" });
     }
 
     handleMessageChange(event) {
         this.setState({message: event.target.value});
+    }
+
+    componentDidMount() {
+        const chat = document.getElementById("chat");
+
+        setInterval(function() {
+            let isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 100;
+            if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+        }, 250);
     }
 
     render() { 
@@ -47,8 +58,10 @@ class App extends Component {
                         <PagesContainer />
                     </div>
                     <div className="col-md-4 border border-dark">
-                        <div id="chat" readonly>
+                        <div id="chat">
+                        <p>
                             Study Live: Hello
+                        </p>
                         </div>
                     </div>
                 </div>
