@@ -5,13 +5,13 @@ const io = require('socket.io')(server);
 io.on('connection', client => {
     console.log(`a user is connected: ${client.id}`);
     
-    client.on('subscribeToTimer', interval => {
-        console.log('client is subscribing to timer with interval', interval);
+    // client.on('subscribeToTimer', interval => {
+    //     console.log('client is subscribing to timer with interval', interval);
 
-        setInterval(() => {
-            client.emit('timer', new Date());
-        }, interval);
-    });
+    //     setInterval(() => {
+    //         client.emit('timer', new Date());
+    //     }, interval);
+    // });
 
     client.on('disconnect', function(){
         console.log(`user disconnected ${client.id}`);

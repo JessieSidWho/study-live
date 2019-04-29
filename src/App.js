@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PagesContainer from "./components/PagesContainer";
-import { subscribeToTimer, socket } from './sockets/client';
+import { socket } from './sockets/client';
 import "./App.css";
 
 class App extends Component {
@@ -16,13 +16,11 @@ class App extends Component {
         this.handleMessageChange = this.handleMessageChange.bind(this);
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
 
-        subscribeToTimer((error, timestamp) => this.setState({
-            timestamp
-        }));
+        // subscribeToTimer((error, timestamp) => this.setState({
+        //     timestamp
+        // }));
 
         socket.on('chat message', msg => {
-            console.log(msg);
-
             const p = document.createElement("p");
             p.append(msg);
             document.getElementById("chat").append(p);
