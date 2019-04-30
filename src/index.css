@@ -3,12 +3,17 @@ body {
 }
 
 #behindTabs {
-    background-color: #bccbde;
+    background-color: #f1f1ef;
 }
 
 #tabName {
     color: black;
     width: 100px;
+}
+
+#tabName:active {
+    color: white;
+    background-color: #343A40;
 }
 
 #tabName:focus {
@@ -18,4 +23,18 @@ body {
 
 #col {
     background-color: #343A40;
+}
+
+#msgbox {
+    width: 60%;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding-top: 1%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+}
+
+#sendbtn {
+    width: 30%;
 }

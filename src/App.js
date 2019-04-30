@@ -58,31 +58,41 @@ class App extends Component {
             <>
                 <Navbar />
                 <div className="row">
-                    <div className="col-md-8">
+                    <div className="col-md-8 border border-light bg-dark text-white">
                         <PagesContainer />
                     </div>
-                    <div className="col-md-4 border border-dark">
-                        <div id="chat" >
+                    <div className="col-md-4 border border-light bg-dark text-white">
+                        <div id="chat" className="" >
                             <p>
                                 Study Live: Hello
                             </p>
                         </div>
 
-                        <div className="row border border-dark">
-                            <form onSubmit={this.handleMessageSubmit}>
-                                <label>send message</label>
+                        <div className="row">
+                            <form className="col-sm-12" onSubmit={this.handleMessageSubmit}>
                                 <input
+                                    id="msgbox" 
+                                    className="rounded-lg"                                   
                                     type="text"
                                     value={ this.state.message }
                                     onChange = { this.handleMessageChange }
+                                    placeholder="Your Message Here"
                                     name="message" />
                                 <input
+                                    id="sendbtn"
+                                    className="btn btn-light text-dark"
                                     type="submit"
-                                    value="Submit" />
+                                    value="Send" />
                             </form>
                         </div>
                     </div>
                     
+                </div>
+
+                <div className="row"> 
+                  <div className="col-md-8">
+                       
+                  </div>
                 </div>
 
                 {/* <div className="row">
