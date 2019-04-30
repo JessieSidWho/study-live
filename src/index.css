@@ -9,6 +9,7 @@ body {
 #tabName {
     color: black;
     width: 100px;
+    height: 37px;
 }
 
 #tabName:active {
@@ -35,10 +36,15 @@ body {
     padding-left: 2%;
 }
 
+#user-count {
+    height: 37px;
+    color: #ff6000;
+}
+
 #sendbtn {
     width: 30%;
 }
 
 #siteTitle {
-    color: #ff4500
+    color: #ff6000;
 }

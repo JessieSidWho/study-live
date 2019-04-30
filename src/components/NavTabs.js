@@ -3,7 +3,7 @@ import React from "react";
 function NavTabs(props) {
   return (
     
-      <ul id="behindTabs" className="nav nav-tabs row">
+      <ul id="behindTabs" className="nav nav-tabs row rounded-lg">
         <li className="nav-item col-md-2">
           <a id="tabName"
             href="#lofi"
