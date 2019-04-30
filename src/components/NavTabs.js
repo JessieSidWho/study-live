@@ -15,20 +15,47 @@ function NavTabs(props) {
         </li>
         <li className="nav-item col-md-2">
           <a id="tabName"
-            href="#tropical"
-            onClick={() => props.handlePageChange("Tropical")}
-            className={props.currentPage === "Tropical" ? "nav-link active" : "nav-link"}
+            href="#reggae"
+            onClick={() => props.handlePageChange("Reggae")}
+            className={props.currentPage === "Reggae" ? "nav-link active" : "nav-link"}
           >
-            Tropical
+            Reggae
         </a>
         </li>
         <li className="nav-item col-md-2">
           <a id="tabName"
-            href="#classical"
-            onClick={() => props.handlePageChange("Classical")}
-            className={props.currentPage === "Classical" ? "nav-link active" : "nav-link"}
+            href="#indie"
+            onClick={() => props.handlePageChange("Indie")}
+            className={props.currentPage === "Indie" ? "nav-link active" : "nav-link"}
           >
-            Classical
+            Indie
+        </a>
+        </li>
+        <li className="nav-item col-md-2">
+          <a id="tabName"
+            href="#jazz"
+            onClick={() => props.handlePageChange("Jazz")}
+            className={props.currentPage === "Jazz" ? "nav-link active" : "nav-link"}
+          >
+            Jazz
+        </a>
+        </li>
+        <li className="nav-item col-md-2">
+          <a id="tabName"
+            href="#morningcoffee"
+            onClick={() => props.handlePageChange("MorningCoffee")}
+            className={props.currentPage === "MorningCoffee" ? "nav-link active" : "nav-link"}
+          >
+            Coffee
+        </a>
+        </li>
+        <li className="nav-item col-md-2">
+          <a id="tabName"
+            href="#metal"
+            onClick={() => props.handlePageChange("Metal")}
+            className={props.currentPage === "Metal" ? "nav-link active" : "nav-link"}
+          >
+            Metal
         </a>
         </li>
       </ul>
