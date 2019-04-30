@@ -8,7 +8,6 @@ import "./App.css";
 class App extends Component {
     
     state = {
-        // timestamp: "no timestamp yet",
         message: ""
     }
 
@@ -18,27 +17,29 @@ class App extends Component {
         this.handleMessageChange = this.handleMessageChange.bind(this);
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
 
-        // subscribeToTimer((error, timestamp) => this.setState({
-        //     timestamp
-        // }));
-
         socket.on('chat message', msg => {
             const p = document.createElement("p");
             p.append(msg);
             document.getElementById("chat").append(p);
-
             this.scrollChatIfAtBottom();
         });
+
+        socket.on('user count', count => {
+            const userCount = document.getElementById("user-count");
+
+            let message = (count === 1) ?
+                `${count} person is listening to study-live (that's you!)` :
+                `${count} people are listening to study-live`;
+            
+            userCount.innerText = message;
+        })
     }
 
     handleMessageSubmit(event) {
         event.preventDefault();
         console.log(`message: ${this.state.message}`);
         socket.emit('chat message', this.state.message);
-
-
         this.setState({ message: "" });
-
         this.scrollChatIfAtBottom();
     }
 
@@ -48,7 +49,6 @@ class App extends Component {
 
     scrollChatIfAtBottom() {
         const chat = document.getElementById("chat");
-
         let isScrolledToBottom = chat.scrollHeight - chat.clientHeight <= chat.scrollTop + 50;
         if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
     }
@@ -58,48 +58,45 @@ class App extends Component {
             <>
                 <Navbar />
                 <div className="row">
-                    <div className="col-md-8">
+                    <div className="col-md-8 border border-light bg-dark text-white">
                         <PagesContainer />
                     </div>
-                    <div className="col-md-4 border border-dark">
-                        <div id="chat" >
+
+                    <div className="col-md-4 border border-light bg-dark text-white">
+
+                        <div id="user-count"></div>
+
+                        <div id="chat" className="" >
                             <p>
                                 Study Live: Hello
                             </p>
                         </div>
 
-                        <div className="row border border-dark">
-                            <form onSubmit={this.handleMessageSubmit}>
-                                <label>send message</label>
+                        <div className="row">
+                            <form className="col-sm-12" onSubmit={this.handleMessageSubmit}>
                                 <input
+                                    id="msgbox" 
+                                    className="rounded-lg"                                   
                                     type="text"
                                     value={ this.state.message }
                                     onChange = { this.handleMessageChange }
+                                    placeholder="Your Message Here"
                                     name="message" />
                                 <input
+                                    id="sendbtn"
+                                    className="btn btn-light text-dark"
                                     type="submit"
-                                    value="Submit" />
+                                    value="Send" />
                             </form>
                         </div>
                     </div>
-                    
                 </div>
 
-                {/* <div className="row">
-                    <div className="col-md-4 offset-md-8 border border-dark">
-                        <form onSubmit={this.handleMessageSubmit}>
-                            <label>send message</label>
-                            <input
-                                type="text"
-                                value={ this.state.message }
-                                onChange = { this.handleMessageChange }
-                                name="message" />
-                            <input
-                                type="submit"
-                                value="Submit" />
-                        </form>
-                    </div>
-                </div> */}
+                <div className="row"> 
+                  <div className="col-md-8">
+                       
+                  </div>
+                </div>
             </>
         )
     }
