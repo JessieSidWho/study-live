@@ -64,7 +64,7 @@ class App extends Component {
 
                     <div className="col-md-4 border border-light bg-dark text-white">
 
-                        <div id="user-count"></div>
+                        <div id="user-count" className="chat_header border-bottom border-light"></div>
 
                         <div id="chat" className="" >
                             <p>
