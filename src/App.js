@@ -80,6 +80,36 @@ class App extends Component {
         });
     }
 
+    getChatMessages() {
+        return (
+            axios.get('http://localhost:8001/chat')
+            .then(data => {
+                return data;
+            })
+            .catch(error => {
+                return error;
+            })
+        )
+    }
+
+    async componentDidMount() {
+        const res = await this.getChatMessages();
+        // console.log(res.data.chat);
+        const chat = res.data.chat;
+        console.log(chat);
+
+        for(let i in chat) {
+
+            // console.log(chat[i].message);
+            const chatdiv = document.getElementById("chat");
+            const p = document.createElement("p");
+
+            p.innerText = `${chat[i].username}: ${chat[i].message}`;
+
+            chatdiv.append(p);
+        }
+    }
+
     render() { 
         return (
             <>
