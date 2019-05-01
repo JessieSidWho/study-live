@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import NavTabs from "./NavTabs";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import Lofi from "./pages/Lofi";
 import Reggae from "./pages/Reggae";
 import Indie from "./pages/Indie";
 import Jazz from "./pages/Jazz";
 import MorningCoffee from './pages/MorningCoffee';
 import Metal from './pages/Metal';
+import Login from './Login'; 
+// import Menu from './Menu';
+
 
 class Pages extends Component {
   state = {
@@ -19,7 +22,7 @@ class Pages extends Component {
 
   renderPage = () => {
     if (this.state.currentPage === "/") {
-      return <Home />;
+      return <Login/>;
     } else if (this.state.currentPage === "Lofi") {
       return <Lofi />;
     } else if (this.state.currentPage === "Reggae") {

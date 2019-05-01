@@ -75,8 +75,9 @@ class App extends Component {
         console.log(body);
 
         axios.post(
-            'https://localhost:8001/chat/save',
-            { body })
+            'http://localhost:8001/chat/save',
+            { body,
+              headers: {'Access-Control-Allow-Origin': '*'} })
         .then(function (response) {
             console.log(response);
         })
@@ -90,15 +91,15 @@ class App extends Component {
             <>
                 <Navbar />
                 <div className="row">
-                    <div className="col-md-8 border border-light bg-dark text-white">
+                    <div className="col-md-8 border-bottom-0 border-light bg-dark text-white">
                         <PagesContainer />
                     </div>
 
-                    <div className="col-md-4 border border-light bg-dark text-white">
+                    <div className="col-md-4 border border-light bg-dark text-white rounded-lg">
 
-                        <div id="user-count" className="chat_header border-bottom border-light"></div>
+                        <div id="user-count" className="row border-bottom border-light rounded-lg pt-2 pl-4">STUDY LIVE CHAT</div>
 
-                        <div id="chat" className="" >
+                        <div id="chat" className="col-sm-12 pt-3" >
                             <p>
                                 Study Live: Hello
                             </p>
