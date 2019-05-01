@@ -3,7 +3,6 @@ const Chat = require('../../model/chat');
 exports.getMessages = async (req, res) => {
     try {
         const chat = await Chat.find({});
-        console.log({ chat });
         res.json({ chat });
     }
     catch (error) {
@@ -14,7 +13,6 @@ exports.getMessages = async (req, res) => {
 exports.saveMessages = async (req, res) => {
     try {
         const chat = req.body;
-        console.log(chat);
 
         const saveChat = new Chat({
             username: chat.username,
@@ -22,7 +20,7 @@ exports.saveMessages = async (req, res) => {
             timestamp: chat.timestamp
         })
 
-        await saveChat.saved();
+        await saveChat.save();
         res.json({ message: "OK", saveChat });
     }
     catch (error) {

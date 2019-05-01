@@ -45,17 +45,13 @@ class App extends Component {
 
     async handleMessageSubmit(event) {
         event.preventDefault();
-        console.log(`message: ${this.state.message}`);
         socket.emit('chat message', this.state.message);
-
         const data = {
-            username: "anonymoous",
+            username: "anonymoose",
             message: this.state.message,
             timestamp: this.state.timestamp
         }
-
         await this.postChatMessage(data);
-
         this.setState({ message: "" });
         this.scrollChatIfAtBottom();
     }
@@ -70,14 +66,12 @@ class App extends Component {
         if(isScrolledToBottom) chat.scrollTop = chat.scrollHeight - chat.clientHeight;
     }
 
-    postChatMessage(body) {
-        console.log('Posting chat message to database');
-        console.log(body);
-
-        axios.post(
-            'http://localhost:8001/chat/save',
-            { body,
-              headers: {'Access-Control-Allow-Origin': '*'} })
+    postChatMessage(data) {
+        axios.post('http://localhost:8001/chat/save', {
+                username: data.username,
+                message: data.message,
+                timestamp: data.timestamp
+        })
         .then(function (response) {
             console.log(response);
         })
