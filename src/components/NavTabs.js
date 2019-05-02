@@ -1,62 +1,69 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 function NavTabs(props) {
   return (
     
       <ul id="behindTabs" className="nav nav-tabs row rounded-lg">
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#lofi"
-            onClick={() => props.handlePageChange("Lofi")}
+          <Link id="tabName"
+            to="/lofi"
+            // href="#lofi"
+            // onClick={() => props.handlePageChange("Lofi")}
             className={`${props.currentPage === "Lofi" ? "nav-link active" : "nav-link"}`}
           >
             Lofi
-        </a>
+        </Link>
         </li>
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#reggae"
-            onClick={() => props.handlePageChange("Reggae")}
+          <Link id="tabName"
+            to='/reggae'
+            // href="#reggae"
+            // onClick={() => props.handlePageChange("Reggae")}
             className={props.currentPage === "Reggae" ? "nav-link active" : "nav-link"}
           >
             Reggae
-        </a>
+        </Link>
         </li>
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#indie"
-            onClick={() => props.handlePageChange("Indie")}
+          <Link id="tabName"
+            to='/indie'
+            // href="#indie"
+            // onClick={() => props.handlePageChange("Indie")}
             className={props.currentPage === "Indie" ? "nav-link active" : "nav-link"}
           >
             Indie
-        </a>
+        </Link>
         </li>
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#jazz"
-            onClick={() => props.handlePageChange("Jazz")}
+          <Link id="tabName"
+            to='/jazz'
+            // href="#jazz"
+            // onClick={() => props.handlePageChange("Jazz")}
             className={props.currentPage === "Jazz" ? "nav-link active" : "nav-link"}
           >
             Jazz
-        </a>
+        </Link>
         </li>
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#morningcoffee"
-            onClick={() => props.handlePageChange("MorningCoffee")}
+          <Link id="tabName"
+            to='/morningcoffee'
+            // href="#morningcoffee"
+            // onClick={() => props.handlePageChange("MorningCoffee")}
             className={props.currentPage === "MorningCoffee" ? "nav-link active" : "nav-link"}
           >
             Coffee
-        </a>
+        </Link>
         </li>
         <li className="nav-item col-md-2">
-          <a id="tabName"
-            href="#metal"
-            onClick={() => props.handlePageChange("Metal")}
+          <Link id="tabName"
+            to="/metal"
+            // href="#metal"
+            // onClick={() => props.handlePageChange("Metal")}
             className={props.currentPage === "Metal" ? "nav-link active" : "nav-link"}
           >
             Metal
-        </a>
+        </Link>
         </li>
       </ul>
     

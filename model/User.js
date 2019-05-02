@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     googleId: String,
-    todos: [{ type: Schema.Types.ObjectId}]
+    name: String,
 });
 
 const User = mongoose.model('User', UserSchema);

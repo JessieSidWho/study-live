@@ -30,12 +30,13 @@ passport.use(
     callbackURL: "/auth/google/callback",
     proxy: true
   }, async (accessToken, refreshToken, profile, done) => {
+    console.log(profile.name.givenName);
       try {
         const existingUser = await db.User.findOne({ googleId: profile.id });
         if(existingUser) {
           done(null, existingUser);
         } else {
-          const user = await db.User.create({ googleId: profile.id });
+          const user = await db.User.create({ googleId: profile.id, name: profile.name.givenName });
           done(null, user);
         }
       } catch(e) {
