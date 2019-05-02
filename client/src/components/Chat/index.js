@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { subscribeToTimer, socket } from '../../sockets/client';
+import { subscribeToTimer, socket } from '../../services/sockets';
 import './chat.css'
 
 class Chat extends Component {

@@ -1,4 +1,4 @@
-require("./sockets/server");
+require("./services/sockets");
 
 require("./config/connection");
 const express = require('express');
