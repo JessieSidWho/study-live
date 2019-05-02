@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
+import Chat from './components/Chat';
 import './index.css';
 
-// chat api dependencies
-import Chat from './components/Chat';
-// import axios from 'axios';
-// import { subscribeToTimer, socket } from './sockets/client';
-// import "./App.css";
 
 class App extends Component {
     state = {}
