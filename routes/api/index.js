@@ -2,7 +2,7 @@ const router = require("express").Router();
 const todoRoutes = require('./todoRoutes');
 
 // we're inside /api
-router.use('/todos', todoRoutes)
+router.use('/home', todoRoutes)
 
 // /api/currentUser
 router.get('/currentUser', (req, res) => {
