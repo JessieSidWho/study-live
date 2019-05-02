@@ -2,6 +2,10 @@ form label {
     margin-right: 5px;
 }
 
+div form {
+    margin-top: 10px;
+}
+
 .chat_header {
     padding: 8px;
     margin-bottom: 10px;

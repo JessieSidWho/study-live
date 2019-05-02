@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { subscribeToTimer, socket } from '../../sockets/client';
+import { subscribeToTimer, socket } from './sockets';
 import './chat.css'
 
 class Chat extends Component {
@@ -68,9 +68,6 @@ class Chat extends Component {
                 username: data.username,
                 message: data.message,
                 timestamp: data.timestamp
-        })
-        .then(function (response) {
-            console.log(response);
         })
         .catch(function (error) {
             console.log(error);

@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
 import Home from './components/pages/Home';
+import Chat from './components/Chat';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { fetchUser } from './actions';
 
-// chat api dependencies
-import Chat from './components/Chat';
-// import axios from 'axios';
-// import { subscribeToTimer, socket } from './sockets/client';
-// import "./App.css";
 
 class App extends Component {
     state = {}
