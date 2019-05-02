@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const todoRoutes = require('./todoRoutes');
+// const todoRoutes = require('./todoRoutes');
 
 // we're inside /api
-router.use('/home', todoRoutes)
+// router.use('/home')
 
 // /api/currentUser
 router.get('/currentUser', (req, res) => {
