@@ -17,8 +17,15 @@ const iframeStyle = {
 }
 
 const Indie = () => (
-  <div className="" style={divStyle}>
-    <iframe title="indie" src="https://streamable.com/s/afpl7/pjylnf?autoplay=1" frameBorder="0" width="90%" height="90%" allowFullScreen style={iframeStyle}></iframe>
+  <div style={divStyle}>
+    <iframe
+      title="indie"
+      src="https://streamable.com/s/afpl7/pjylnf?autoplay=1"
+      frameBorder="0"
+      width="90%"
+      height="90%"
+      allowFullScreen
+      style={iframeStyle} />
   </div>
 );
 

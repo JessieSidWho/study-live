@@ -17,8 +17,15 @@ const iframeStyle = {
 }
 
 const Reggae = () => (
-  <div className="" style={divStyle}>
-    <iframe title="reggae" src="https://streamable.com/s/f9ece/balkoy?autoplay=1" frameBorder="0" width="90%" height="90%" allowFullScreen style={iframeStyle}></iframe>
+  <div style={divStyle}>
+    <iframe
+      title="reggae"
+      src="https://streamable.com/s/f9ece/balkoy?autoplay=1"
+      frameBorder="0"
+      width="90%"
+      height="90%"
+      allowFullScreen
+      style={iframeStyle} />
   </div>
 );
 
