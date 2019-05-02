@@ -20,7 +20,7 @@ const Lofi = () => (
   <div className="" >
     
     <div className="" style={divStyle}>
-    <iframe className='' title="lofi" src="https://streamable.com/s/vxs8r/tdamtm?autoplay=1" frameborder="0" width='90%' height="90%" allowfullscreen style={iframeStyle}></iframe>
+    <iframe className='' title="lofi" src="https://streamable.com/s/vxs8r/tdamtm?autoplay=1" frameBorder="0" width='90%' height="90%" allowFullScreen style={iframeStyle}></iframe>
     </div>
     
   </div>

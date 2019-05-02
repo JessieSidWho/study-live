@@ -18,7 +18,7 @@ const iframeStyle = {
 
 const Jazz = () => (
     <div className="" style={divStyle}>
-        <iframe title="Jazz" src="https://streamable.com/s/2e9ls/blaxby?autoplay=1" frameborder="0" width="90%" height="90%" allowfullscreen style={iframeStyle}></iframe>
+        <iframe title="Jazz" src="https://streamable.com/s/2e9ls/blaxby?autoplay=1" frameBorder="0" width="90%" height="90%" allowFullScreen style={iframeStyle}></iframe>
     </div>
 );
 
