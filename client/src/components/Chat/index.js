@@ -88,7 +88,7 @@ class Chat extends Component {
 
     async componentDidMount() {
         const res = await this.getChatMessages();
-        const chat = res.data.chat;
+        const chat = await res.data.chat;
 
         for(let i in chat) {
 
