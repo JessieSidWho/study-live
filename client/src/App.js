@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Navbar from './components/Navbar';
 import PagesContainer from "./components/PagesContainer";
-import Home from './components/pages/Home';
 import Chat from './components/Chat';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -28,17 +27,19 @@ class App extends Component {
     render() {
         return (
             <Router>
+                <>
                 {this.logName()}
                 <Navbar />
                 <div className="row">
                     <div className="col-md-8 border-bottom-0 border-light bg-dark text-white">
-                        <Route exact path='/' component={Home} />
+                        <Route exact path='/' component={PagesContainer} />
                     </div>
 
                     <div className="col-md-4 border border-light bg-dark text-white rounded-lg">
                         <Chat />
                     </div>
                 </div>
+                </>
             </Router>
         );
     }

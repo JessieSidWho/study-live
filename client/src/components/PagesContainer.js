@@ -46,7 +46,7 @@ class Pages extends Component {
           handlePageChange={this.handlePageChange}
         />
         <Switch>
-          <Route exact path='/' component={Home}/>
+          <Route exact path='/home' component={Home}/>
           <Route exact path='/lofi' component={Lofi}/>
           <Route exact path='/reggae' component={Reggae}/>
           <Route exact path='/indie' component={Indie}/>
