@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { subscribeToTimer, socket } from './sockets';
-import './chat.css'
+import './chat.css';
+import { connect } from 'react-redux';
+import { fetchUser } from './../../actions';
+
 
 class Chat extends Component {
     state = {
@@ -40,10 +43,10 @@ class Chat extends Component {
     async handleMessageSubmit(event) {
         event.preventDefault();
         
-        socket.emit('chat message', this.state.message);
+        socket.emit('chat message', `${this.props.auth.name}: ${this.state.message}`);
 
         const data = {
-            username: "anonymoose",
+            username: this.props.auth.name,
             message: this.state.message,
             timestamp: this.state.timestamp
         }
@@ -137,4 +140,8 @@ class Chat extends Component {
     }
 }
  
-export default Chat;
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
+export default connect(mapStateToProps, { fetchUser })(Chat);
