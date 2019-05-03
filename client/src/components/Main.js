@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PagesContainer from './PagesContainer';
 import NavBar from './NavBar';
 import Chat from './Chat';
+import { connect } from 'react-redux';
+import { colorChange } from './../actions';
 
 class Main extends Component {
     render() { 
@@ -10,11 +12,11 @@ class Main extends Component {
                 <NavBar />
                 
                 <div className="row">
-                    <div className="col-md-8 border-bottom-0 border-light bg-dark text-white">
+                    <div className={`col-md-8 border-bottom-0 ${this.props.color}`}>
                         <PagesContainer />
                     </div>
 
-                    <div className="col-md-4 border border-light bg-dark text-white rounded-lg">
+                    <div className={`col-md-4 border ${this.props.color} rounded-lg`}>
                         <Chat />
                     </div>
                 </div>
@@ -23,4 +25,10 @@ class Main extends Component {
     }
 }
  
-export default Main;
+
+
+function mapStateToProps({ color }) {
+    return { color };
+}
+
+export default connect(mapStateToProps, { colorChange })(Main);

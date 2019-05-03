@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import ToggleSwitch from './ToggleSwitch';
+import { connect } from 'react-redux';
+import { colorChange } from './../actions';
 
 class NavBar extends Component {
+
+
+
     render() { 
         return (
-            <nav className="navbar navbar-dark bg-dark">
+            <nav className={`navbar navbar-dark ${this.props.color}`}>
 
                <ToggleSwitch/>
 
@@ -17,4 +22,8 @@ class NavBar extends Component {
     }
 }
  
-export default NavBar;
+function mapStateToProps({ color }) {
+    return { color };
+}
+
+export default connect(mapStateToProps, { colorChange })(NavBar);
