@@ -28,8 +28,8 @@ io.on('connection', client => {
     });
 
     client.on('chat message', msg => {
-        console.log(`${client.id}:`, msg);
-        io.emit('chat message', `${client.id}: ${msg}`);
+        // console.log(`${client.id}:`, msg);
+        io.emit('chat message', `${msg}`);
     });
 });
 
