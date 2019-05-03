@@ -6,6 +6,12 @@ body {
     background-color: #f1f1ef;
 }
 
+#bar {
+    background-color: #f1f1ef;
+    height: 37px;
+    width: 100%;
+}
+
 #tabName {
     color: black;
     width: 100px;
