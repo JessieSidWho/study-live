@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Main from './components/Main'
 import PagesContainer from "./components/PagesContainer";
 import Chat from './components/Chat';
 import './index.css';
@@ -29,16 +30,20 @@ class App extends Component {
             <Router>
                 <>
                 {this.logName()}
-                <Navbar />
-                <div className="row">
-                    <div className="col-md-8 border-bottom-0 border-light bg-dark text-white">
-                        <Route exact path='/' component={PagesContainer} />
+                {/* <Login /> */}
+                <Route exact path='/logout' component={ Login } />
+                <Route exact path='/' component={ Main } />
+                {/* <Route ex */}
+                {/* <div className="row">
+                    <div className="col-md-8 border-bottom-0 border-light bg-dark text-white"> */}
+                        {/* <Route exact path='/' component={PagesContainer} /> */}
+                        {/* <PagesContainer />
                     </div>
 
                     <div className="col-md-4 border border-light bg-dark text-white rounded-lg">
                         <Chat />
                     </div>
-                </div>
+                </div> */}
                 </>
             </Router>
         );
