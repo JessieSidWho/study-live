@@ -10,6 +10,7 @@ const Reggae = () => (
       width="90%"
       height="90%"
       allowFullScreen
+      allow="autoplay"
       className='iframeStyle' />
   </div>
 );
