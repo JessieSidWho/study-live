@@ -14,13 +14,13 @@ const Login = () => (
 
         </nav>
 
-        <div id="bar" className="row">
+        <div id="bar" className="row-fluid">
             <div className="col-md-12">
             </div>
         </div>
 
-        <div className="row mt-5">
-        <div className="col-md-6 offset-3 mt-5">
+        <div className="row mt-5 ">
+        <div className="col-md-6 offset-3 mt-5 border border-white rounded-lg p-5">
             <div className='text-white h3 text-center mb-4'>
                 <p>Welcome to Study-Live!</p>
                 <p>Login to study and talk to your peers!</p>

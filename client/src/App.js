@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Login from './components/Login';
-import Main from './components/Main'
-import PagesContainer from "./components/PagesContainer";
-import Chat from './components/Chat';
+import Main from './components/Main';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { connect } from 'react-redux';
@@ -29,21 +27,8 @@ class App extends Component {
         return (
             <Router>
                 <>
-                {this.logName()}
-                {/* <Login /> */}
-                <Route exact path='/' component={ Login } />
-                <Route exact path='/main' component={ Main } />
-                {/* <Route ex */}
-                {/* <div className="row">
-                    <div className="col-md-8 border-bottom-0 border-light bg-dark text-white"> */}
-                        {/* <Route exact path='/' component={PagesContainer} /> */}
-                        {/* <PagesContainer />
-                    </div>
-
-                    <div className="col-md-4 border border-light bg-dark text-white rounded-lg">
-                        <Chat />
-                    </div>
-                </div> */}
+                    <Route exact path='/' component={Login} />
+                    <Route exact path='/main' component={Main} />
                 </>
             </Router>
         );

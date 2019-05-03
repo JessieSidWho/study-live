@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class Pages extends Component {
   state = {
-    currentPage: "/"
+    currentPage: "/lofi"
   };
 
   handlePageChange = page => {
@@ -40,22 +40,22 @@ class Pages extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <NavTabs
-          currentPage={this.state.currentPage}
-          handlePageChange={this.handlePageChange}
-        />
-        <Switch>
-          <Route exact path='/home' component={Home}/>
-          <Route exact path='/lofi' component={Lofi}/>
-          <Route exact path='/reggae' component={Reggae}/>
-          <Route exact path='/indie' component={Indie}/>
-          <Route exact path='/jazz' component={Jazz}/>
-          <Route exact path='/morningcoffee' component={MorningCoffee}/>
-          <Route exact path='/metal' component={Metal}/>
-        </Switch>
-        {/* {this.renderPage()} */}
-      </div>
+        <div>
+          <NavTabs
+            currentPage={this.state.currentPage}
+            handlePageChange={this.handlePageChange}
+          />
+          <Switch>
+            <Route exact path='/main' component={Lofi} />
+            <Route exact path='/lofi' component={Lofi} />
+            <Route exact path='/reggae' component={Reggae} />
+            <Route exact path='/indie' component={Indie} />
+            <Route exact path='/jazz' component={Jazz} />
+            <Route exact path='/morningcoffee' component={MorningCoffee} />
+            <Route exact path='/metal' component={Metal} />
+          </Switch>
+          {/* {this.renderPage()} */}
+        </div>
       </Router>
     );
   }
