@@ -31,8 +31,8 @@ class App extends Component {
                 <>
                 {this.logName()}
                 {/* <Login /> */}
-                <Route exact path='/logout' component={ Login } />
-                <Route exact path='/' component={ Main } />
+                <Route exact path='/' component={ Login } />
+                <Route exact path='/main' component={ Main } />
                 {/* <Route ex */}
                 {/* <div className="row">
                     <div className="col-md-8 border-bottom-0 border-light bg-dark text-white"> */}
