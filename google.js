@@ -6,9 +6,7 @@ const cookieSession = require('cookie-session');
 const app = express();
 
 const path = require('path');
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/study_live_db");
-
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/study_live_db", {useNewUrlParser: true});
 
 const db = require('./model');
 
