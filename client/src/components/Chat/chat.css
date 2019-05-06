@@ -17,3 +17,7 @@ div form {
 
     overflow-y: auto;
 }
+
+#user-count {
+    min-width: 500px;
+}
