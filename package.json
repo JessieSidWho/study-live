@@ -1,6 +1,9 @@
 {
   "name": "jessiesidwho",
   "version": "0.1.0",
+  "engines": {
+    "node": "11.14.0"
+  },
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
@@ -24,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run study-live",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "study-live": "concurrently \"nodemon server.js\" \"cd client && npm start\""
