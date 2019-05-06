@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-mongoose.connect(`mongodb://localhost/study_live_db`, {useNewUrlParser: true});
+const keys = require('./../keys')
+mongoose.connect(`mongodb://${keys.dbuser}:${keys.dbpassword}@ds151876.mlab.com:51876/heroku_4jqld61n`, {useNewUrlParser: true});
 const db = mongoose.connection;
 
 db.on(`error`, error => {
