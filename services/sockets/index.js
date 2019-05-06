@@ -2,6 +2,8 @@ const app = require('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+const PORT = process.env.PORT || 8000;
+
 let count=0;
 
 io.on('connection', client => {
@@ -33,6 +35,6 @@ io.on('connection', client => {
     });
 });
 
-server.listen(8000, () => {
+server.listen(PORT, () => {
     console.log('listening on port 8000');
 });

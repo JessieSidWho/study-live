@@ -2,6 +2,7 @@ require("../../config/connection");
 const express = require('express');
 const app = express();
 const chatRouter = require('../../routes/chat');
+const PORT = process.env.PORT || 8001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,6 +15,6 @@ app.use(function(req, res, next) {
 
 app.use('/chat', chatRouter);
 
-app.listen(8001, () => {
+app.listen(PORT, () => {
     console.log('chat db listening on port 8001');
 });
