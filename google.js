@@ -50,6 +50,6 @@ app.use(routes);
 
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(3001, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
