@@ -28,7 +28,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "start": "concurrently \"node server.js\" \"cd client && npm start\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
