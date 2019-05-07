@@ -3,7 +3,7 @@ import axios from 'axios';
 import { subscribeToTimer, socket } from './sockets';
 import './chat.css';
 import { connect } from 'react-redux';
-import { fetchUser } from './../../actions';
+import { fetchUser } from '../../actions';
 
 
 class Chat extends Component {

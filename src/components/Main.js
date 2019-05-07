@@ -3,7 +3,7 @@ import PagesContainer from './PagesContainer';
 import NavBar from './NavBar';
 import Chat from './Chat';
 import { connect } from 'react-redux';
-import { colorChange } from './../actions';
+import { colorChange } from '../actions';
 
 class Main extends Component {
     render() { 

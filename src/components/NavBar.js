@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ToggleSwitch from './ToggleSwitch';
 import { connect } from 'react-redux';
-import { colorChange } from './../actions';
+import { colorChange } from '../actions';
 
 class NavBar extends Component {
 
