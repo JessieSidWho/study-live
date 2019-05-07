@@ -3,7 +3,7 @@
 // import isString from 'lodash/isString';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { colorChange } from './../../actions';
+import { colorChange } from '../../actions';
 
 // import isBoolean from 'lodash/isBoolean';
 // import isFunction from 'lodash/isFunction';
