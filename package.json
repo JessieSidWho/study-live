@@ -1,50 +1,36 @@
 {
-  "name": "jessiesidwho",
-  "version": "0.1.0",
-  "engines": {
-    "node": "11.14.0"
-  },
-  "private": true,
-  "proxy": "http://localhost:3001/",
+  "name": "study-live",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "google.js",
   "dependencies": {
     "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
     "cookie-session": "^1.3.3",
     "dotenv": "^8.0.0",
-    "mongoose": "^5.5.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.7",
     "ngrok": "^3.1.1",
     "nodemon": "^1.19.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-axios": "^2.0.3",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "redux": "^4.0.1",
-    "redux-form": "^8.2.0",
-    "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.86.0",
+    "semantic-ui-react": "^0.87.1",
     "socket.io": "^2.2.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "study-live": "concurrently \"nodemon server.js\" \"cd client && npm start\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon server.js\" \"cd client && npm start\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessieSidWho/react-portfolio.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "concurrently": "^4.1.0"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessieSidWho/react-portfolio/issues"
+  },
+  "homepage": "https://github.com/JessieSidWho/react-portfolio#readme"
 }
