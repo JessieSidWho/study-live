@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("../routes");
 const passport = require('passport');
 const cookieSession = require('cookie-session');
 const app = express();
@@ -8,9 +8,9 @@ const app = express();
 const path = require('path');
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/study_live_db", {useNewUrlParser: true});
 
-const db = require('./model');
+const db = require('../model');
 
-require('./services/passport');
+require('./passport');
 
 
 const PORT = process.env.PORT || 3001;
@@ -31,7 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/authRoutes')(app);
+require('../routes/authRoutes')(app);
 
 
 // Serve up static assets (usually on heroku)
