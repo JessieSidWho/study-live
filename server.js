@@ -15,17 +15,7 @@ const keys = require('./config/keys');
 
 // socket io
 const server = require('http').createServer(app);
-const io = require('socket.io')(server, {
-  handlePreflightRequest: (req, res) => {
-      const headers = {
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
-          "Access-Control-Allow-Origin": "*", //or the specific origin you want to give access to,
-          "Access-Control-Allow-Credentials": true
-      };
-      res.writeHead(200, headers);
-      res.end();
-  }
-});
+const io = require('socket.io')(server);
 
 // google
 const routes = require("./routes");
@@ -129,9 +119,9 @@ io.on('connection', client => {
   });
 });
 
-// server.listen(PORT, () => {
-//   console.log('listening on port 8000');
-// });
+server.listen('8000', () => {
+  console.log('listening on port 8000');
+});
 
 
 // Google
