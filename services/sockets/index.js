@@ -30,11 +30,10 @@ io.on('connection', client => {
     });
 
     client.on('chat message', msg => {
-        // console.log(`${client.id}:`, msg);
         io.emit('chat message', `${msg}`);
     });
 });
 
 server.listen(PORT, () => {
-    console.log('listening on port 8000');
+    console.log(`listening on port ${PORT}`);
 });
