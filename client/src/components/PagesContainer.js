@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class Pages extends Component {
   state = {
-    currentPage: "/lofi"
+    currentPage: "/main"
   };
 
   handlePageChange = page => {
