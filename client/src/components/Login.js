@@ -20,7 +20,7 @@ const Login = () => (
                     <p>Welcome to Study-Live!</p>
                     <p>Login to study and talk to your peers!</p>
                 </div>
-                <a href='http://localhost:3001/auth/google'><button className="btn btn-secondary btn-block">Login with Google</button></a>
+                <a href='https://study-live.herokuapp.com/auth/google'><button className="btn btn-secondary btn-block">Login with Google</button></a>
             </div>
         </div>
     </>
