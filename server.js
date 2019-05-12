@@ -147,8 +147,8 @@ require('./routes/authRoutes')(app);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  // app.use(express.static("client/build"));
-  app.use('/static', express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static("client/build"));
+  // app.use('/static', express.static(path.join(__dirname, 'client/build')));
 }
 
 app.get('/users', async (req, res) => {
