@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Login from './components/Login';
 import Main from './components/Main';
 import './index.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { connect } from 'react-redux';
 import { fetchUser } from './actions';
 import { colorChange } from './actions';
