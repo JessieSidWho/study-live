@@ -3,6 +3,7 @@ require("./config/connection");
 
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // Routes to Mongo DB
 const chatRouter = require('./routes/chat');
@@ -27,7 +28,6 @@ const io = require('socket.io')(server);
 // google
 const routes = require("./routes");
 const cookieSession = require('cookie-session');
-const path = require('path');
 
 const db = require('./model');
 
