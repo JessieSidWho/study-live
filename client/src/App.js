@@ -26,14 +26,12 @@ class App extends Component {
 
     render() {
         return (
-            <>
-            {this.logName()}
-
+            
             <Router>
                 
                 <div className={`container-fluid h-100 ${this.props.color}`}>
-                
                     <Route exact path='/' component={Login} />
+                    {this.logName()}
                     <Route exact path='/main' component={Main} />
                     <Route exact path='/lofi' component={Main} />
                     <Route exact path='/reggae' component={Main} />
@@ -43,7 +41,7 @@ class App extends Component {
                     <Route exact path='/metal' component={Main} />
                 </div>
             </Router>
-            </>
+            
         );
     }
 }
