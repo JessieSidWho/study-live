@@ -1,8 +1,10 @@
 require(`dotenv`).config();
 require("./config/connection");
 
-const express = require('express');
-const app = express();
+const express = require('express')
+// const app = express();
+const app = express.createServer(express.logger())
+
 const path = require('path');
 
 // Routes to Mongo DB
@@ -19,11 +21,13 @@ const keys = require('./config/keys');
 const PORT = process.env.PORT || 3001;
 
 const INDEX = path.join(__dirname, 'client/build/index.html');
+const io = require('socket.io').listen(app);
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-const io = require('socket.io')(server);
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 
 // google
 const routes = require("./routes");
