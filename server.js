@@ -84,6 +84,7 @@ passport.use(
 
 
 // Chat implementation using Socket IO
+const PORT = process.env.PORT || 8000;
 
 let count = 0;
 
@@ -118,8 +119,8 @@ io.on('connection', client => {
   });
 });
 
-server.listen('8000', () => {
-  console.log('listening on port 8000');
+server.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
 
 
