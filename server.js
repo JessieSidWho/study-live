@@ -147,9 +147,21 @@ require('./routes/authRoutes')(app);
 
 
 // Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+//   // app.use('/static', express.static(path.join(__dirname, 'client/build')));
+// }
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  // app.use('/static', express.static(path.join(__dirname, 'client/build')));
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+} else {
+  app.use(express.static(path.join(__dirname, '/client/public')));
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
 }
 
 app.get('/users', async (req, res) => {
