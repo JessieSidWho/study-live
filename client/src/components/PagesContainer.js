@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class Pages extends Component {
   state = {
-    currentPage: "/main"
+    currentPage: "/main/main"
   };
 
   handlePageChange = page => {
@@ -27,13 +27,13 @@ class Pages extends Component {
             handlePageChange={this.handlePageChange}
           />
           <Switch>
-            <Route exact path='/main' component={Lofi} />
-            <Route exact path='/lofi' component={Lofi} />
-            <Route exact path='/reggae' component={Reggae} />
-            <Route exact path='/indie' component={Indie} />
-            <Route exact path='/jazz' component={Jazz} />
-            <Route exact path='/morningcoffee' component={MorningCoffee} />
-            <Route exact path='/metal' component={Metal} />
+            <Route exact path='main/main' component={Lofi} />
+            <Route exact path='main/lofi' component={Lofi} />
+            <Route exact path='main/reggae' component={Reggae} />
+            <Route exact path='main/indie' component={Indie} />
+            <Route exact path='main/jazz' component={Jazz} />
+            <Route exact path='main/morningcoffee' component={MorningCoffee} />
+            <Route exact path='main/metal' component={Metal} />
           </Switch>
         </div>
       </Router>
