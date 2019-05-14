@@ -14,7 +14,14 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 // socket io
-const server = require('http').createServer(app);
+// const server = require('http').createServer(app);
+const PORT = process.env.PORT || 3001;
+
+const INDEX = path.join(__dirname, 'client/build/index.html');
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 const io = require('socket.io')(server);
 
 // google
@@ -23,8 +30,6 @@ const cookieSession = require('cookie-session');
 const path = require('path');
 
 const db = require('./model');
-
-const PORT = process.env.PORT || 3001;
 
 // Data sent over the server read in JSON format
 app.use(express.urlencoded({ extended: true }));
@@ -119,9 +124,9 @@ io.on('connection', client => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+// server.listen(PORT, () => {
+//   console.log(`listening on port ${PORT}`);
+// });
 
 
 // Google
