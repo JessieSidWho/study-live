@@ -1,11 +1,8 @@
 require(`dotenv`).config();
 require("./config/connection");
 
-const express = require('express')
-// const app = express();
-const app = express.createServer(express.logger())
-
-const path = require('path');
+const express = require('express');
+const app = express();
 
 // Routes to Mongo DB
 const chatRouter = require('./routes/chat');
@@ -17,23 +14,17 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 // socket io
-// const server = require('http').createServer(app);
-const PORT = process.env.PORT || 3001;
-
-const INDEX = path.join(__dirname, 'client/build/index.html');
-const io = require('socket.io').listen(app);
-
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
-
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // google
 const routes = require("./routes");
 const cookieSession = require('cookie-session');
+const path = require('path');
 
 const db = require('./model');
+
+const PORT = process.env.PORT || 3001;
 
 // Data sent over the server read in JSON format
 app.use(express.urlencoded({ extended: true }));
@@ -93,7 +84,6 @@ passport.use(
 
 
 // Chat implementation using Socket IO
-// const socketPORT = process.env.PORT || 8000;
 
 let count = 0;
 
@@ -128,9 +118,9 @@ io.on('connection', client => {
   });
 });
 
-// server.listen(PORT, () => {
-//   console.log(`listening on port ${PORT}`);
-// });
+server.listen('8000', () => {
+  console.log('listening on port 8000');
+});
 
 
 // Google
