@@ -29,13 +29,13 @@ class App extends Component {
             <Router>
                 <div className={`container-fluid h-100 ${this.props.color}`}>
                     <Route exact path='/' component={Login} />
-                    <Route exact path='/main' component={Main} />
-                    <Route exact path='/lofi' component={Main} />
-                    <Route exact path='/reggae' component={Main} />
-                    <Route exact path='/indie' component={Main} />
-                    <Route exact path='/jazz' component={Main} />
-                    <Route exact path='/morningcoffee' component={Main} />
-                    <Route exact path='/metal' component={Main} />
+                    <Route path='/main' component={Main} />
+                    <Route path='/lofi' component={Main} />
+                    <Route path='/reggae' component={Main} />
+                    <Route path='/indie' component={Main} />
+                    <Route path='/jazz' component={Main} />
+                    <Route path='/morningcoffee' component={Main} />
+                    <Route path='/metal' component={Main} />
                 </div>
             </Router>
         );
