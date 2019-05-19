@@ -118,13 +118,13 @@ io.on('connection', client => {
   });
 });
 
-// server.listen('8000', () => {
-//   console.log('listening on port 8000');
-// });
-
-server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+server.listen('8000', () => {
+  console.log('listening on port 8000');
 });
+
+// server.listen(PORT, () => {
+//   console.log(`listening on port ${PORT}`);
+// });
 
 // Google
 
