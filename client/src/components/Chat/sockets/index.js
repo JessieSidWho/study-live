@@ -1,5 +1,5 @@
 import openSocket from 'socket.io-client';
-export const socket = openSocket('http://localhost:8000');
+export const socket = openSocket('https://study-live.herokuapp.com:8000');
 
 function subscribeToTimer(cb) {
     socket.on('timer', timestamp => cb(null, timestamp));
