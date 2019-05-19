@@ -4,7 +4,6 @@ require("./config/connection");
 const express = require('express');
 const app = express();
 
-
 // Routes to Mongo DB
 const chatRouter = require('./routes/chat');
 
@@ -14,16 +13,9 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
-// Add routes, both API and view
-app.use(routes);
-
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
-
 // socket io
-// const server = require('http').createServer(app);
-const io = require('socket.io')(app);
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // google
 const routes = require("./routes");
@@ -179,8 +171,8 @@ app.get('/users', async (req, res) => {
 })
 
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
