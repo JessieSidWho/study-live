@@ -15,7 +15,7 @@ class NavBar extends Component {
 
                 <a className="navbar-brand " href="/" style={{color: '#ff4500', fontSize: '30px'}}>study live</a>
 
-                <a href='https://study-live.herokuapp.com/api/logout'><button className="btn btn-secondary btn-block" >Logout</button></a>
+                <a href='https://study-live.herokuapp.com'><button className="btn btn-secondary btn-block" >Logout</button></a>
 
             </nav>
         );
