@@ -73,11 +73,11 @@ passport.use(
     proxy: true
   }, async (accessToken, refreshToken, profile, done) => {
     try {
-      const existingUser = await db.User.findOne({ googleId: profile.id, name: profile.name });
+      const existingUser = await db.User.findOne({ googleId: profile.id, name: profile.name.givenName });
       if (existingUser) {
         done(null, existingUser);
       } else {
-        const user = await db.User.create({ googleId: profile.id, name: profile.name });
+        const user = await db.User.create({ googleId: profile.id, name: profile.name.givenName });
         done(null, user);
       }
     } catch (e) {
