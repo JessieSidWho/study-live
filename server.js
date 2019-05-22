@@ -16,7 +16,7 @@ const keys = require('./config/keys');
 const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/study_live_db`;
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
-const db = mongoose.connection;
+// const db = mongoose.connection(MONGODB_URI);
 
 // socket io
 // const server = require('http').createServer(app);
@@ -27,7 +27,7 @@ const routes = require("./routes");
 const cookieSession = require('cookie-session');
 const path = require('path');
 
-// const db = require('./model');
+const db = require('./model');
 
 const PORT = process.env.PORT || 3001;
 
