@@ -72,6 +72,7 @@ passport.use(
     callbackURL: "/auth/google/callback",
     proxy: true
   }, async (accessToken, refreshToken, profile, done) => {
+    console.log(profile);
     try {
       const existingUser = await db.User.findOne({ googleId: profile.id, name: profile.name.givenName });
       if (existingUser) {
@@ -81,7 +82,7 @@ passport.use(
         done(null, user);
       }
     } catch (e) {
-      don
+      done(e)
     }
 
   })
