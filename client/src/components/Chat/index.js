@@ -67,7 +67,7 @@ class Chat extends Component {
     }
 
     postChatMessage(data) {
-        axios.post(`/chat/save`, {
+        axios.post(`https://study-live.herokuapp.com/chat/save`, {
                 username: data.username,
                 message: data.message,
                 timestamp: data.timestamp
@@ -79,7 +79,7 @@ class Chat extends Component {
 
     getChatMessages() {
         return (
-            axios.get(`/chat`)
+            axios.get(`https://study-live.herokuapp.com/chat`)
             .then(data => {
                 return data;
             })
