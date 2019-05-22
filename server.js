@@ -13,6 +13,11 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
+const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/study_live_db`;
+
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
+const db = mongoose.connection;
+
 // socket io
 // const server = require('http').createServer(app);
 const SocketIO = require('socket.io');
@@ -22,7 +27,7 @@ const routes = require("./routes");
 const cookieSession = require('cookie-session');
 const path = require('path');
 
-const db = require('./model');
+// const db = require('./model');
 
 const PORT = process.env.PORT || 3001;
 
