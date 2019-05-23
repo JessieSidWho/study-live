@@ -129,11 +129,11 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get('/users', async (req, res) => {
-  console.log(req.user);
-  const users = await db.User.find();
-  res.send(users)
-})
+// app.get('/users', async (req, res) => {
+//   console.log(req.user);
+//   const users = await db.User.find();
+//   res.json(users)
+// })
 
 // Add routes, both API and view
 app.use(routes);
