@@ -69,7 +69,7 @@ class Chat extends Component {
     }
 
     postChatMessage(data) {
-        axios.post(`/chat/save`, {
+        axios.post(`/api/chat/save`, {
                 username: data.username,
                 message: data.message,
                 timestamp: data.timestamp
@@ -81,7 +81,7 @@ class Chat extends Component {
 
     getChatMessages() {
         return (
-            axios.get(`/chat`)
+            axios.get(`/api/chat`)
             .then(data => {
                 return data;
             })
