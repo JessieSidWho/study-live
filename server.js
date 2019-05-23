@@ -42,6 +42,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Add routes, both API and view
+app.use(routes);
+
 // Handles saving the Chat messages to Mongo DB
 app.use('/chat', chatRouter);
 
@@ -93,10 +96,6 @@ passport.use(
 // Define middleware here
 app.use('/static', express.static(path.join(__dirname, 'client/build')));
 
-// app.use(express.static('client/build'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -108,7 +107,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/authRoutes')(app);
+require('./routes/au`````thRoutes')(app);
 
 
 // Serve up static assets (usually on heroku)
@@ -129,14 +128,11 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get('/users', async (req, res) => {
-  console.log(req.user);
-  const users = await db.User.find();
-  res.send(users)
-})
-
-// Add routes, both API and view
-app.use(routes);
+// app.get('/users', async (req, res) => {
+//   console.log(req.user);
+//   const users = await db.User.find();
+//   res.send(users)
+// });
 
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);

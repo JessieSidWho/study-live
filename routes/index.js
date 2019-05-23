@@ -8,7 +8,7 @@ router.get('/users', async (req, res) => {
     
     const users = await db.User.find();
     res.json(users);
-})
+});
 
 // API Routes
 router.use("/api", apiRoutes);
