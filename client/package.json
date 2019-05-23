@@ -5,7 +5,7 @@
     "node": "11.14.0"
   },
   "private": true,
-  "proxy": "https://study-live.herokuapp.com/",
+  "proxy": "https://study-live.herokuapp.com",
   "dependencies": {
     "http-proxy-middleware": "^0.19.1",
     "prop-types": "^15.7.2",
