@@ -42,6 +42,8 @@ class Chat extends Component {
 
     async handleMessageSubmit(event) {
         event.preventDefault();
+
+        console.log(this.props);
                                                                                                 
         socket.emit('chat message', `${this.props.auth.name}: ${this.state.message}`);
 
