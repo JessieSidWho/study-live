@@ -42,7 +42,7 @@ class Chat extends Component {
 
     async handleMessageSubmit(event) {
         event.preventDefault();
-        
+                                                                                                
         socket.emit('chat message', `${this.props.auth.name}: ${this.state.message}`);
 
         const data = {
@@ -67,7 +67,7 @@ class Chat extends Component {
     }
 
     postChatMessage(data) {
-        axios.post(`https://study-live.herokuapp.com/chat/save`, {
+        axios.post(`/chat/save`, {
                 username: data.username,
                 message: data.message,
                 timestamp: data.timestamp
@@ -79,7 +79,7 @@ class Chat extends Component {
 
     getChatMessages() {
         return (
-            axios.get(`https://study-live.herokuapp.com/chat`)
+            axios.get(`/chat`)
             .then(data => {
                 return data;
             })
