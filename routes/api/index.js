@@ -7,7 +7,7 @@ const router = require("express").Router();
 // /api/currentUser
 router.get('/currentUser', (req, res) => {
     console.log(req.user);
-    res.send(req.user);
+    res.json(req.user);
 });
 
 router.get('/logout', (req, res) => {

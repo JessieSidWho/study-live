@@ -107,14 +107,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/au`````thRoutes')(app);
-
-
-// Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-//   // app.use('/static', express.static(path.join(__dirname, 'client/build')));
-// }
+require('./routes/authRoutes')(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -127,12 +120,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "./client/public/index.html"));
   });
 }
-
-// app.get('/users', async (req, res) => {
-//   console.log(req.user);
-//   const users = await db.User.find();
-//   res.send(users)
-// });
 
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
