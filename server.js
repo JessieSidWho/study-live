@@ -4,9 +4,6 @@ require("./config/connection");
 const express = require('express');
 const app = express();
 
-// Routes to Mongo DB
-const chatRouter = require('./routes/chat');
-
 // Passport
 const passport = require("passport");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -44,9 +41,6 @@ app.use(function (req, res, next) {
 
 // Add routes, both API and view
 app.use('/', routes);
-
-// Handles saving the Chat messages to Mongo DB
-app.use('/chat', chatRouter);
 
 // Passport implementation
 
