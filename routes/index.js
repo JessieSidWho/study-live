@@ -12,7 +12,7 @@ router.get('/users', async (req, res) => {
 });
 
 // Handles saving the Chat messages to Mongo DB
-app.use('/chat', chatRouter);
+router.use('/chat', chatRouter);
 
 // API Routes
 router.use("/api", apiRoutes);
