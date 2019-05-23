@@ -14,6 +14,8 @@ exports.saveMessages = async (req, res) => {
     try {
         const chat = req.body;
 
+        console.log(chat);
+
         const saveChat = new Chat({
             username: chat.username,
             message: chat.message,
