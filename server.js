@@ -39,9 +39,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-// Add routes, both API and view
-app.use('/', routes);
-
 // Passport implementation
 
 // this sets an identifying token that says you are without a doubt
@@ -101,17 +98,22 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "/client/public/index.html"));
-  });
-} else {
-  app.use(express.static(path.join(__dirname, '/client/public')));
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "/client/public/index.html"));
-  });
-}
+// Add routes, both API and view
+app.use(routes);
+
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/public"));
+//   app.get("/*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "/client/public/index.html"));
+//   });
+// } else {
+//   app.use(express.static(path.join(__dirname, '/client/public')));
+//   app.get("/*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "/client/public/index.html"));
+//   });
+// }
+
+
 
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
