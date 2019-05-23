@@ -5,15 +5,15 @@ const apiRoutes = require("./api");
 const chatRouter = require("./chat");
 const db = require('./../model');
 
-// If no API routes are hit, send the React app
+// If no API routes are hit, send the React router
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
-  app.get("/*", function(req, res) {
+  router.use(express.static("client/public"));
+  router.get("/*", function(req, res) {
     res.sendFile(path.join(__dirname, "/client/public/index.html"));
   });
 } else {
-  app.use(express.static(path.join(__dirname, '/client/public')));
-  app.get("/*", function(req, res) {
+  router.use(express.static(path.join(__dirname, '/client/public')));
+  router.get("/*", function(req, res) {
     res.sendFile(path.join(__dirname, "/client/public/index.html"));
   });
 }
