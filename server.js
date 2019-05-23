@@ -83,7 +83,7 @@ passport.use(
 );
 
 // Google
-require('./routes/authRoutes')(app);
+
 // Define middleware here
 app.use('/static', express.static(path.join(__dirname, 'client/public')));
 
@@ -97,6 +97,8 @@ app.use(
 // once these functions run, our User model instance will be added to req.user
 app.use(passport.initialize());
 app.use(passport.session());
+
+require('./routes/authRoutes')(app);
 
 // Add routes, both API and view
 app.use(routes);
