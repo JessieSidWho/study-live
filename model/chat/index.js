@@ -1,20 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// schema for saving the chat messages.
+
 const ChatSchema = new Schema ({
     username: {
         type: String,
-        // required: true
+        required: true
     },
 
     message: {
         type: String,
-        // required: true
+        required: true
     },
 
     timestamp: {
         type: String,
-        // required: true
+        required: true
     }
 })
 

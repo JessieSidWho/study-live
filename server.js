@@ -16,7 +16,6 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 // const db = mongoose.connection(MONGODB_URI);
 
 // socket io
-// const server = require('http').createServer(app);
 const SocketIO = require('socket.io');
 
 // google
@@ -103,6 +102,7 @@ require('./routes/authRoutes')(app);
 // Add routes, both API and view
 app.use(routes);
 
+// Add route to react application
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("/*", function(req, res) {
@@ -115,8 +115,9 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+// Express server listens on PORT specified
 const server = app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server is listening`);
 });
 
 // Chat implementation using Socket IO
@@ -127,14 +128,14 @@ let count = 0;
 const io = SocketIO.listen(server);
 
 io.on('connection', client => {
-  console.log(`a user is connected: ${client.id}`);
+  console.log(`a user has connected: ${client.id}`);
 
   count++;
-  console.log(`users: ${count}`);
+  console.log(`user count: ${count}`);
   io.emit('user count', count);
 
   client.on('subscribeToTimer', interval => {
-    console.log('client is subscribing to timer with interval', interval);
+    console.log('client has subscribed to timer');
 
     setInterval(() => {
       client.emit('timer', new Date());
@@ -145,12 +146,11 @@ io.on('connection', client => {
     console.log(`user disconnected ${client.id}`);
 
     count--;
-    console.log(`users: ${count}`);
+    console.log(`user count: ${count}`);
     io.emit('user count', count);
   });
 
   client.on('chat message', msg => {
-    // console.log(`${client.id}:`, msg);
     io.emit('chat message', `${msg}`);
   });
 });

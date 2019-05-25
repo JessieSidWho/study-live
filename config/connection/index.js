@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// sets URI to Heroku's MONGO DB URI, or to the localhosts URI
 const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/study_live_db`;
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});

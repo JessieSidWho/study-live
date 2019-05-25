@@ -15,15 +15,6 @@ class App extends Component {
         this.props.fetchUser();
     }
 
-    // logName() {
-    //     console.log(this.props.auth);
-    //     if (!this.props.auth) {
-    //         return <div>Nothing</div>
-    //     } else {
-    //         return <h1>Hello {this.props.auth.name}</h1>
-    //     }
-    // }
-
     render() {
         return (
             
