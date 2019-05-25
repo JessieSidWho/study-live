@@ -116,7 +116,7 @@ class Chat extends Component {
 
                 <div id="chat" className="col-sm-12 pt-3" >
                     <p>
-                        Study Live: Hello, Our Chat feature is disabled at the moment. We apologize for the inconvenience.
+                        
                     </p>
                 </div>
 
