@@ -10,7 +10,7 @@ Aaron, Greg, and Jessie
 
 This was the second project that we created for the UC Berkeley Full Stack Web Development Bootcamp.
 
-The pupose of this project was to set up a web space that people can listen to music, chat with their peers, and concentrate on their work.
+The pupose of this project was to set up a web space where people can listen to music, chat with their peers, and concentrate on their work.
 
 ## Technology
 
