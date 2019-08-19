@@ -48,3 +48,7 @@ You can set the color scheme to light or dark mode.
  - Streamable (for the music)
  - Socket IO (for the chat feature)
  - Google Oauth
+
+ ### Future Features
+
+Setting up the Study-Live with a live music stream. One possible api we could use for this is Spotify.
