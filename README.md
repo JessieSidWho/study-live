@@ -1,5 +1,7 @@
 # Study Live
 
+A study room where students can gather, chat, and listen to music.
+
 [Study Live application demo](https://study-live.herokuapp.com)
 
 ## Team Members
