@@ -54,3 +54,6 @@ You can set the color scheme to light or dark mode.
  ### Future Features
 
 We were considering setting up Study-Live with the [Spotify API](https://developer.spotify.com/documentation/web-api/). This would enable us to set up our own playlists, vastly expanding the kinds of music available on our platform.
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
