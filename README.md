@@ -2,8 +2,6 @@
 
 A study room where students can gather, chat, and listen to music.
 
-[Study Live application demo](https://study-live.herokuapp.com)
-
 ## Team Members
 
 Aaron, Greg, and Jessie
@@ -13,6 +11,10 @@ Aaron, Greg, and Jessie
 This was the third project that we created for the UC Berkeley Full Stack Web Development Bootcamp.
 
 The pupose of this project was to set up a web space where people can listen to music, chat with their peers, and concentrate on their work.
+
+Click the link below to check it out!
+
+[Study Live application demo](https://study-live.herokuapp.com)
 
 ## Features
 
