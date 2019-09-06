@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Study Live
 
-## Available Scripts
+A study room where students can gather, chat, and listen to music.
 
-In the project directory, you can run:
+## Team Members
 
-### `npm start`
+Aaron, Greg, and Jessie
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This was the third project that we created for the UC Berkeley Full Stack Web Development Bootcamp.
 
-### `npm test`
+The pupose of this project was to set up a web space where people can listen to music, chat with their peers, and concentrate on their work.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Click the link below to check it out!
 
-### `npm run build`
+[Study Live application demo](https://study-live.herokuapp.com)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Music
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application uses several pre-recorded videos of five different music genres. These videos were recorded using the [Streamable](https://streamable.com/) service.
 
-### `npm run eject`
+ - Lofi
+ - Reggae
+ - Indie
+ - Jazz
+ - Coffee
+ - Metal
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Chat
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All messages sent over chat will be displayed to any other users accessing the application. Chat messages are saved to our database and will persist even after logging out of Study-Live. The number of people connected to Study-Live are displayed at the top of the chat box.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In order to be properly identified in the chat, you will need to log in to your google account.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Don't have one? Then go make one! It's easy enough, just go to [google.com](https://www.google.com) and sign up.
 
-## Learn More
+If you don't want to sign up for a google account, you can experience the website by clicking this [link](https://study-live.herokuapp.com/main).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Light / Dark Mode
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can set the color scheme to light or dark mode.
 
-### Code Splitting
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+ - [MongoDB](https://www.mongodb.com/)
+ - [Express](http://expressjs.com/)
+ - [React](https://reactjs.org/)
+ - [NodeJS](https://nodejs.org/en/)
+ - [Redux](https://redux.js.org/)
+ - [Bootstrap](https://getbootstrap.com/)
+ - [Streamable](https://streamable.com/)
+ - [Socket IO](https://socket.io/)
+ - [Google Oauth](https://developers.google.com/identity/protocols/OAuth2)
 
-### Analyzing the Bundle Size
+ ### Future Features
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+We were considering setting up Study-Live with the [Spotify API](https://developer.spotify.com/documentation/web-api/). This would enable us to set up our own playlists, vastly expanding the kinds of music available on our platform.
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/RexStrider/study-live/blob/master/LICENSE) file for details
