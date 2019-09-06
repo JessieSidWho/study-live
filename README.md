@@ -39,7 +39,7 @@ If you don't want to sign up for a google account, you can experience the websit
 
 You can set the color scheme to light or dark mode.
 
-## Technology
+## Built With
 
  - [MongoDB](https://www.mongodb.com/)
  - [Express](http://expressjs.com/)
