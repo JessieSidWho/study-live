@@ -16,7 +16,7 @@ The pupose of this project was to set up a web space where people can listen to 
 
 ### Music
 
-This application uses several pre-recorded videos of five different music genres. These videos were recorded using the [Streamable](https://streamable.com/).
+This application uses several pre-recorded videos of five different music genres. These videos were recorded using the [Streamable](https://streamable.com/) service.
 
  - Lofi
  - Reggae
